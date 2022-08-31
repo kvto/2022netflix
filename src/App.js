@@ -1,5 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import { styled} from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import Login from "./Pages/Login";
+import Profile from "./Pages/Profile";
+import Paypal from "./Pages/Paypal";
+import Home from "./Pages/Home";
 
 function App() {
   const classes = useStyles();
@@ -7,13 +11,12 @@ function App() {
   return (
     <div className={classes.root}>
        <Routes>
-        {
-          !user ? (<Login />) : (
+        <Route path="/login" element={<Login />}/>
+        
             <Route path="/profile" element={<Profile />} />,
             <Route path="/checkout" element={<Paypal />} />,
             <Route path="/" element={<Home />} />
-          )
-        }
+          
       </Routes>
     </div>
   );
@@ -21,7 +24,7 @@ function App() {
 
 const useStyles = makeStyles((theme) =>({
   root: {
-    backgroundColor: "#111",
+    // backgroundColor: "#111",
     minHeight: "100vh"
   }
 }))
