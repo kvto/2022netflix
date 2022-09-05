@@ -25,4 +25,14 @@ estilos a cada uno de los componentes
 
 ## Estilos en los componentes de Pages
 
-- 
+- Creamos lña infraestructura de estilos a todos los components pagina: Banner, Headrer, Plans, Row 
+
+
+### Estilos en los componentes de la carpeta components
+
+- Creamos la infraestructura basica del resto de componentes
+
+### Comenzamos a trabajar en el headers
+
+- Importamos el logo
+- Añadimos al AppBar u
