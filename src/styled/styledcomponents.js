@@ -15,7 +15,7 @@ background-color: red;
 color: #990099;
 border-radius: 5px;
 text-transform: inherit;
-padding: 15px;
+padding: 20px;
 font-size: 1.1rem;
 border: none;
 outline: none;

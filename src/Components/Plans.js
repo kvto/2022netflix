@@ -1,26 +1,26 @@
 import React from 'react'
-import { makeStyles } from '@mui/styles';
 import { Typography } from '@mui/material';
 import { NetflixButton } from '../styled/styledcomponents';
+import { createTheme, ThemeProvider  } from '@mui/material/styles';
+import useStyles from "../Pages/syles"
 
 const Plans = ({cost, children}) => {
+  const theme = createTheme();
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <ThemeProvider theme={theme}>
+    <div className={classes.rooplans}>
       <Typography className={classes.standard} variant='h5'>
       {children}  
       </Typography>
       <NetflixButton>Suscribe</NetflixButton>
-    </div>
+    </div>  
+    </ThemeProvider>
+    
   )
 }
 
-const useStyles = makeStyles((theme) =>({
-  root: {
-    // backgroundColor: "#111",
 
-  }
-}))
 
 
 export default Plans
