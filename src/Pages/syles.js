@@ -15,17 +15,17 @@ export default makeStyles(() => ({
         }
     },
     root:{
-        color: "#990099",
         minHeight: "100vh",
         maxWidth: "800px",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent: "space-between",
 
       },
       details: {
         width: "100%",
-        marginLeft: theme.spacing(3),
+        marginLeft: theme.spacing(),
         "& h6":{
             backgroundColor: "yellow",
             padding: theme.spacing(2),
@@ -40,19 +40,19 @@ export default makeStyles(() => ({
       plansText: {
         borderBottom: "1px solid blue"
       },
-
       rooplans:{
         marginTop: theme.spacing(4),
-        marginBottom: theme.spacing(4),
-        marginRight: theme.spacing(5),
-        padding: theme.spacing(2),
+        marginBottom: theme.spacing(3),
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         "& button": {
             marginBottom: theme.spacing(4),
+            marginRight: theme.spacing(10),
+            marginLeft: theme.spacing(10),
         }
+      },
+      standard: {
+        fontSize: "1.2rem"
       }
-
-    
 }))

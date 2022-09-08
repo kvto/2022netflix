@@ -10,13 +10,13 @@ border-radius: 5px;
 border: none;`
 
 export const NetflixButton = styled.button`
-z-index: 15,
-background-color: red;
+z-index: 15;
+background-color: ${(props) => props.color === "gray" ? "#656161" : "#fa5252"};
 color: #990099;
 border-radius: 5px;
 text-transform: inherit;
-padding: 20px;
-font-size: 1.1rem;
+padding: 22px;
+font-size: 1rem;
 border: none;
 outline: none;
 cursor: pointer;`
