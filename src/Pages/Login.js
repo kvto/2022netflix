@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles';
-import logo from '../imagenes/logo.png'
+import logo from '../imagenes/logo.png';
+import SignUp from '../Pages/SignUp';
 import banne from  '../imagenes/HeaderBanner.jpg';
 import { Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { NetflixButton, NetflixInput } from '../styled/styledcomponents';
 
 const Login = () => {
+  const [signIn, setSignIn] = useState(false)
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -16,6 +18,9 @@ const Login = () => {
        <NetflixButton className={classes.session}> Iniciar sesion</NetflixButton>
       </Toolbar>
         <div className={classes.info}>
+          {
+            !signIn ? (<SignUp />) :(
+              <>
           <Typography variant='h4' gutterBottom>
             Unlimited films, TV programmes and more.
           </Typography>
@@ -26,10 +31,12 @@ const Login = () => {
             Ready to watch ? Enter your email to create or restart your
             membership.
           </Typography>
-    <div className={classes.inputBlock}>
-    <NetflixInput />
-    <NetflixButton>Get Started</NetflixButton>
-    </div>
+          <div className={classes.inputBlock}>
+          <NetflixInput />
+          <NetflixButton>Get Started</NetflixButton>
+          </div>              
+          </>
+            )} 
         </div>
     </div>
   )

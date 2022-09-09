@@ -7,15 +7,17 @@ import Home from "./Pages/Home";
 
 function App() {
   const classes = useStyles();
+  const user = null;
   return (
     <div className={classes.root}>
        <Routes>
-        
-        <Route path="/login" element={<Login />}/>
-        <Route path="/profile" element={<Profile />} />,
+        {!user ? (
+        <Route path="/login" element={<Login />} />
+        ) : (
+         <Route path="/profile" element={<Profile />} />,
         <Route path="/checkout" element={<Paypal />} />,
-        <Route path="/" element={<Home />} />
-          
+        <Route path="/" element={<Home />} /> 
+        )}
       </Routes>
     </div>
   );
