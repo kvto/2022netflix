@@ -8,8 +8,6 @@ import { createTheme, ThemeProvider  } from '@mui/material/styles';
 import useStyles from "../Pages/syles"
 
 
-
-
 const Profile = () => {
   const theme = createTheme();
   const classes = useStyles();

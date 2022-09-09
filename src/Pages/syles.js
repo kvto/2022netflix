@@ -54,5 +54,34 @@ export default makeStyles(() => ({
       },
       standard: {
         fontSize: "1.2rem"
+      },
+
+      rootSign:{
+        background: "rgba(0,0,0,65)",
+        display: "flex",
+        flexDirection: "column",
+        opacity: 0.9,
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        "& h5":{
+          marginTop: theme.spacing(2),
+          width: "70%"
+        }
+      },
+      form: {
+        width: "80%"
+      },
+      email: {
+        margin: "20px"
+      },
+      password: {
+        margin: "20px"
+      },
+      signupLink: {
+        color: "#fff",
+        cursor: "pointer",
+        "& hover": {
+          TextDecoderation: "underline",
+        }
       }
 }))

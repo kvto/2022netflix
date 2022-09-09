@@ -7,7 +7,7 @@ import { Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { NetflixButton, NetflixInput } from '../styled/styledcomponents';
 
 const Login = () => {
-  const [signIn, setSignIn] = useState(false)
+  const [signIn, setSignIn] = useState(false);
   const classes = useStyles();
   return (
     <div className={classes.root}>
