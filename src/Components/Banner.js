@@ -28,17 +28,17 @@ const Banner = () => {
       backgroundPosition: "center",
       color: "#fff"
     }}>
-      <div className={classes.content}>
-        <Typography variant="h2" component="h1" style={{color:"#990099"}}>
+      <div className={classes.content} >
+        <Typography variant="h2" component="h1" style={{color:"#ffff"}}>
           {movie?.title || movie?.name || movie?.original_name}
         </Typography>
         <div className={classes.buttons}>
           <Button style={{color:"black"}}>Play</Button>
           <Button style={{color:"black"}}>My List</Button>
         </div>
-        <Typography variant="h6" className={classes.description} style={{color:"#990099", wordWrap: "break-word"}}>
+        <Typography variant="h6" className={classes.description} style={{color:"#ffff", wordWrap: "break-word"}}>
           {
-            truncate(movie?.overview, 80)
+            truncate(movie?.overview, 100)
           }
           
         </Typography>
@@ -75,6 +75,7 @@ const useStyles = makeStyles((theme) =>({
         backgroundColor: "#e6e6e6"
       }
     },
+    
     fadeBottom: {
       position: "absolute",
       top: "30vh",
