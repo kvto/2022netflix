@@ -3,35 +3,32 @@ import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import { Avatar, IconButton, Toolbar } from '@mui/material';
 import logo from '../imagenes/logo.png'
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 
 const Header = () => {
   const classes = useStyles();
-  let navigate = useNavigate();
+  const history = useHistory();
+
   const user = null;
 
   const handleAuthProfile = () =>{
-      navigate("/profile");
+      
 
   }
-
-  const handleAuthHome = () =>{
-    navigate("/");
-
-}
 
   return (
     <AppBar position='sticky' elevation={0} 
     style={{top:0, left:0, right:0, height: "70px",background: 'transparent', boxShadow: 'none'}}
     >
       <Toolbar className={classes.toolbar}>
-        <IconButton onClick={handleAuthHome}>
+        <IconButton onClick={()=> history.push("/")}>
         <img src={logo} alt="logo" className={classes.image}/>  
         </IconButton>
         <strong>
           {user ? "Sign Out" : <Avatar variant="square" style={{cursor: "pointer"}}
-          onClick={handleAuthProfile}/>
+          onClick={()=> history.push("/profile")}/>
           }
     </strong>
     

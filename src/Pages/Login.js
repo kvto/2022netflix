@@ -5,15 +5,17 @@ import SignUp from '../Pages/SignUp';
 import banne from  '../imagenes/HeaderBanner.jpg';
 import { Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { NetflixButton, NetflixInput } from '../styled/styledcomponents';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+  const history = useHistory();
   const [signIn, setSignIn] = useState(false);
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Toolbar className={classes.toolbar}>
         <IconButton>
-        <img src={logo} alt="logo" className={classes.image}/>  
+        <img onClick={()=> history.push("/")} src={logo} alt="logo" className={classes.image}/>  
         </IconButton>
        <NetflixButton className={classes.session}> Iniciar sesion</NetflixButton>
       </Toolbar>

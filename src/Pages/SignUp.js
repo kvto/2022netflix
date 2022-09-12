@@ -3,26 +3,29 @@ import React, { useState } from 'react'
 import { NetflixButton, NetflixInput } from '../styled/styledcomponents'
 import useStyles from "../Pages/syles"
 import firebaseApp from '../firebase';
-import { getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
-import {Link as RouteLink, useNavigate} from "react-router-dom"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
 const auth = getAuth(firebaseApp)
 
 
 const SignUp = () => {
+  const history = useHistory();
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let navigate  = useNavigate();
 
-  const signIn = () => {}
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password).
+    then((authUser)=> history.push("/"))
+    .catch(err=>alert(err.message))
+  }
+
   const register = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password).then((auth)=>{
-      console.log(auth);
-      if(auth){
-        navigate("/");
-      }
-  }).catch(err=>alert(err.message))
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((authUser)=> history.push("/"))
+    .catch(err=>alert(err.message))
   }
 
   return (
@@ -35,12 +38,14 @@ const SignUp = () => {
         value={email} 
         onChange={(e) => setEmail(e.target.value)}
         placeholder='Email' 
+        type="email"
         className={classes.email}/>
 
         <NetflixInput 
         value={password} 
         onChange={(e) => setPassword(e.target.value)}
         placeholder='Password' 
+        type="password"
         className={classes.password}/>
 
         <NetflixButton onClick={signIn}

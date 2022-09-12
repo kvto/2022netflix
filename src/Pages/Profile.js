@@ -6,11 +6,20 @@ import Plans from '../Components/Plans'
 import { NetflixButton } from '../styled/styledcomponents';
 import { createTheme, ThemeProvider  } from '@mui/material/styles';
 import useStyles from "../Pages/syles"
-
+import { useHistory } from 'react-router-dom';
+import firebaseApp from '../firebase';
+import { getAuth} from 'firebase/auth';
+const auth = getAuth(firebaseApp)
 
 const Profile = () => {
   const theme = createTheme();
   const classes = useStyles();
+  const history = useHistory();
+
+  const signout =() => {
+    auth.signOut();
+    history.push("/login")
+  }
   return (
     <ThemeProvider theme={theme}>
     <Header />
@@ -28,7 +37,7 @@ const Profile = () => {
             <Plans cost={7.99}> Netflix standard  </Plans>
             <Plans cost={11.99}> Netflix Basic  </Plans>
             <Plans wide="medium" color= "gray" cost={14.99}> Netflix Premium  </Plans>
-            <NetflixButton wide='fullWidth'>Sign Out</NetflixButton>
+            <NetflixButton onClick={signout} wide='fullWidth'>Sign Out</NetflixButton>
         </div>
       </div>
       </div> 
