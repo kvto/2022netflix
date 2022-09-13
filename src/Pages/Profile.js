@@ -23,6 +23,7 @@ const Profile = () => {
   return (
     <ThemeProvider theme={theme}>
     <Header />
+    
     <div className={classes.root}>
       <Typography variant='h3'>Edit Profile</Typography>
       <div className={classes.body}>
