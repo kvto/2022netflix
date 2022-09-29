@@ -2,45 +2,41 @@ import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import {selectPrice} from "../features/counter/priceSlice"
 
-  
+
+ 
 const Paypal = () => {
+  const price = useSelector(selectPrice)
+  const paypal = useRef()
 
-      // paypal.Buttons({
-      //   style: {
-      //     shape: 'rect',
-      //     color: 'gold',
-      //     layout: 'vertical',
-      //     label: 'paypal',
-          
-      //   },
+  useEffect(()=>{
+    window.paypal.Buttons({
+      createOrder: (data, actions, err) => {
+        return actions.order.create({
+          intent: "CAPTURE",
+          purchase_units : [
+            {
+              description: "Netflix subscription",
+              amount : {
+                currency_code: "USD",
+                value: price,
+              }
+            }
+          ]
+        })
+      },
+      onApprove : async (data, actions) => { 
+        const order = await actions.order.caputre();
+        console.log(order)
+      },
+      onerror: err => console.log(err)
 
-      //   createOrder: function(data, actions) {
-      //     return actions.order.create({
-      //       purchase_units: [{"description":"Pagar","amount":{"currency_code":"USD","value":12}}]
-      //     });
-      //   },
+    }).render(paypal.current)
+   },[])
 
-      //   onApprove: function(data, actions) {
-      //     return actions.order.capture().then(function(orderData) {
-            
-      //       // Full available details
-      //       console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-      //       // Show a success message within this page, e.g.
-      //       const element = document.getElementById('paypal-button-container');
-      //       element.innerHTML = '';
-      //       element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-      //       // Or go to another URL:  actions.redirect('thank_you.html');
-            
-      //     });
-      //   },
-
-      //   onError: function(err) {
-      //     console.log(err);
-      //   }
-      // }).render('#paypal-button-container')
+  return(
+    <div ref={paypal}>paypal222</div>
+    
+  )
     }
-
 
 export default Paypal
