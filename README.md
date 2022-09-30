@@ -5,6 +5,7 @@
   <img height="200" src="./img/1.png" />
   <img height="200" src="./img/2.png" />
   <img height="200" src="./img/3.png" />
+  <img height="200" src="./img/4.png" />
 </p>
 
 1.- Once the project is downloaded, Once the project is downloaded, access the terminal of your console.
@@ -13,13 +14,13 @@
     * - Run the command "npm install"
    
 <p align="center">
-  <img height="200" src="./img/7.png" />
+  <img height="200" src="./img/5.png" />
 </p>
 
 Once having both steps perfectly, we proceed to execute the environments
 
 <p align="center">
-  <img height="200" src="./img/8.png" />
+  <img height="200" src="./img/6.png" />
 </p>
 
 ## More info about me: 
