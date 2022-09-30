@@ -10,31 +10,28 @@ const Paypal = () => {
 
   useEffect(()=>{
     window.paypal.Buttons({
-      createOrder: (data, actions, err) => {
+      createOrder: function(data, actions) {
+        // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
-          intent: "CAPTURE",
-          purchase_units : [
-            {
-              description: "Netflix subscription",
-              amount : {
-                currency_code: "USD",
-                value: price,
-              }
+          purchase_units: [{
+            amount: {
+              value: price
             }
-          ]
-        })
+          }]
+        });
       },
-      onApprove : async (data, actions) => { 
-        const order = await actions.order.caputre();
-        console.log(order)
-      },
-      onerror: err => console.log(err)
-
+      onApprove: function(data, actions) {
+        // This function captures the funds from the transaction.
+        return actions.order.capture().then(function(details) {
+          // This function shows a transaction success message to your buyer.
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      }
     }).render(paypal.current)
    },[])
 
   return(
-    <div ref={paypal}>paypal222</div>
+    <div ref={paypal}></div>
     
   )
     }
