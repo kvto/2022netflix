@@ -1,11 +1,14 @@
 # Welcome to the Page of Streaming App! 🎞🎥🎬
+An application whose purpose is to acquire the different memberships for the streaming service through a payment system. 
+Counting on a large number of series and movies which the user will have access through standard, basic and premium memberships. 
+Using "Paypal" as payment method
 
 # Steps to run the project 🚨:
 <p align="cener">
-  <img height="200" src="./img/1.png" />
-  <img height="200" src="./img/2.png" />
+  <img height="180" src="./img/1.png" />
+  <img height="180" src="./img/2.png" />
   <img height="200" src="./img/3.png" />
-  <img height="200" src="./img/4.png" />
+  <img height=200" src="./img/4.png" />
 </p>
 
 1.- Once the project is downloaded, Once the project is downloaded, access the terminal of your console.
