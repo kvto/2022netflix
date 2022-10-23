@@ -4,7 +4,7 @@ Counting on a large number of series and movies which the user will have access 
 Using "Paypal" as payment method
 
 # Steps to run the project 🚨:
-<p align="cener">
+<p align="center">
   <img height="180" src="./img/1.png" />
   <img height="180" src="./img/2.png" />
   <img height="200" src="./img/3.png" />
