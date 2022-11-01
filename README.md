@@ -11,7 +11,7 @@ Using "Paypal" as payment method
   <img height=200" src="./img/4.png" />
 </p>
 
-1.- Once the project is downloaded, Once the project is downloaded, access the terminal of your console.
+1.- Once the project is downloaded, access the terminal of your console.
 
     * - To access open the terminal (Control + Ñ) or (Terminal - New Terminal).
     * - Run the command "npm install"
@@ -20,7 +20,7 @@ Using "Paypal" as payment method
   <img height="200" src="./img/5.png" />
 </p>
 
-Once having both steps perfectly, we proceed to execute the environments
+Once having the first step perfectly, we proceed to execute the environments
 
 <p align="center">
   <img height="200" src="./img/6.png" />
